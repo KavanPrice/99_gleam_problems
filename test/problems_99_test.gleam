@@ -4,6 +4,7 @@ import problems/problem_1
 import problems/problem_2
 import problems/problem_3
 import problems/problem_4
+import problems/problem_5
 
 pub fn main() {
   gleeunit.main()
@@ -24,6 +25,7 @@ pub fn last_two_test() {
   problem_2.last_two(["a"])
   |> should.equal(Error(Nil))
 }
+
 pub fn at_test() {
   problem_3.at(2, ["a", "b", "c", "d", "e"])
   |> should.equal(Ok("c"))
@@ -31,10 +33,16 @@ pub fn at_test() {
   problem_3.at(2, ["a"])
   |> should.equal(Error(Nil))
 }
+
 pub fn length_test() {
   problem_4.length(["a", "b", "c"])
   |> should.equal(3)
 
   problem_4.length([])
   |> should.equal(0)
+}
+
+pub fn rev_test() {
+  problem_5.rev(["a", "b", "c"])
+  |> should.equal(["c", "b", "a"])
 }
