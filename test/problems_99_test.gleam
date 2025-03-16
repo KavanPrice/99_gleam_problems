@@ -1,12 +1,16 @@
 import gleeunit
 import gleeunit/should
+import gleam/option.{Some, None}
+import problems/problem_1
 
 pub fn main() {
   gleeunit.main()
 }
 
-// gleeunit test functions end in `_test`
-pub fn hello_world_test() {
-  1
-  |> should.equal(1)
+pub fn last_test() {
+  problem_1.last(["a", "b", "c", "d"])
+  |> should.equal(Some("d"))
+
+  problem_1.last([])
+  |> should.equal(None)
 }
