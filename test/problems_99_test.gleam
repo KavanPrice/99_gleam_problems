@@ -1,4 +1,3 @@
-import problems/problem_7
 import gleeunit
 import gleeunit/should
 import problems/problem_1
@@ -7,6 +6,8 @@ import problems/problem_3
 import problems/problem_4
 import problems/problem_5
 import problems/problem_6
+import problems/problem_7
+import problems/problem_8
 
 pub fn main() {
   gleeunit.main()
@@ -71,4 +72,9 @@ pub fn flatten_test() {
 
   problem_7.flatten(input)
   |> should.equal(["a", "b", "c", "d", "e"])
+}
+
+pub fn compress_test() {
+  problem_8.compress(["a", "a", "a", "a", "b", "c", "c", "a", "a", "d", "e", "e", "e", "e"])
+  |> should.equal(["a", "b", "c", "a", "d", "e"])
 }
