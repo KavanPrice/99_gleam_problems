@@ -5,6 +5,7 @@ import problems/problem_2
 import problems/problem_3
 import problems/problem_4
 import problems/problem_5
+import problems/problem_6
 
 pub fn main() {
   gleeunit.main()
@@ -45,4 +46,12 @@ pub fn length_test() {
 pub fn rev_test() {
   problem_5.rev(["a", "b", "c"])
   |> should.equal(["c", "b", "a"])
+}
+
+pub fn is_palindrome_test() {
+  problem_6.is_palindrome(["x", "a", "m", "a", "x"])
+  |> should.equal(True)
+
+  problem_6.is_palindrome(["a", "b"])
+  |> should.equal(False)
 }
