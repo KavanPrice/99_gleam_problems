@@ -1,3 +1,4 @@
+import problems/problem_7
 import gleeunit
 import gleeunit/should
 import problems/problem_1
@@ -54,4 +55,20 @@ pub fn is_palindrome_test() {
 
   problem_6.is_palindrome(["a", "b"])
   |> should.equal(False)
+}
+
+pub fn flatten_test() {
+  let input = [
+    problem_7.One("a"),
+    problem_7.Many([
+      problem_7.One("b"),
+      problem_7.Many([
+        problem_7.One("c"),
+        problem_7.One("d")]),
+      problem_7.One("e")
+    ])
+  ]
+
+  problem_7.flatten(input)
+  |> should.equal(["a", "b", "c", "d", "e"])
 }
