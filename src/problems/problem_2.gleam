@@ -1,9 +1,7 @@
-import gleam/option.{Some, None, type Option}
-
-pub fn last_two(list: List(a)) -> Option(#(a,a)) {
+pub fn last_two(list: List(a)) -> Result(#(a,a), Nil) {
   case list {
-    [] | [_] -> None
-    [x, y] -> Some(#(x, y))
+    [] | [_] -> Error(Nil)
+    [x, y] -> Ok(#(x, y))
     [_, ..tail] -> last_two(tail)
   }
 }
