@@ -1,4 +1,4 @@
-pub fn last_two(list: List(a)) -> Result(#(a,a), Nil) {
+pub fn last_two(list: List(a)) -> Result(#(a, a), Nil) {
   case list {
     [] | [_] -> Error(Nil)
     [x, y] -> Ok(#(x, y))

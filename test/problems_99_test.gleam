@@ -8,6 +8,7 @@ import problems/problem_5
 import problems/problem_6
 import problems/problem_7
 import problems/problem_8
+import problems/problem_9
 
 pub fn main() {
   gleeunit.main()
@@ -63,11 +64,9 @@ pub fn flatten_test() {
     problem_7.One("a"),
     problem_7.Many([
       problem_7.One("b"),
-      problem_7.Many([
-        problem_7.One("c"),
-        problem_7.One("d")]),
-      problem_7.One("e")
-    ])
+      problem_7.Many([problem_7.One("c"), problem_7.One("d")]),
+      problem_7.One("e"),
+    ]),
   ]
 
   problem_7.flatten(input)
@@ -75,6 +74,22 @@ pub fn flatten_test() {
 }
 
 pub fn compress_test() {
-  problem_8.compress(["a", "a", "a", "a", "b", "c", "c", "a", "a", "d", "e", "e", "e", "e"])
+  problem_8.compress([
+    "a", "a", "a", "a", "b", "c", "c", "a", "a", "d", "e", "e", "e", "e",
+  ])
   |> should.equal(["a", "b", "c", "a", "d", "e"])
+}
+
+pub fn pack_test() {
+  problem_9.pack([
+    "a", "a", "a", "a", "b", "c", "c", "a", "a", "d", "d", "e", "e", "e", "e",
+  ])
+  |> should.equal([
+    ["a", "a", "a", "a"],
+    ["b"],
+    ["c", "c"],
+    ["a", "a"],
+    ["d", "d"],
+    ["e", "e", "e", "e"],
+  ])
 }
