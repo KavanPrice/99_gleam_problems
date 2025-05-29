@@ -9,6 +9,7 @@ import problems/problem_6
 import problems/problem_7
 import problems/problem_8
 import problems/problem_9
+import problems/problem_10
 
 pub fn main() {
   gleeunit.main()
@@ -92,4 +93,9 @@ pub fn pack_test() {
     ["d", "d"],
     ["e", "e", "e", "e"],
   ])
+}
+
+pub fn encode_test() {
+  problem_10.encode(["a", "a", "a", "a", "b", "c", "c", "a", "a", "d", "e", "e", "e", "e"])
+  |> should.equal([#(4, "a"), #(1, "b"), #(2, "c"), #(2, "a"), #(1, "d"), #(4, "e")])
 }
