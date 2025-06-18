@@ -3,6 +3,7 @@ import gleeunit/should
 import problems/problem_1
 import problems/problem_10
 import problems/problem_11
+import problems/problem_12
 import problems/problem_2
 import problems/problem_3
 import problems/problem_4
@@ -121,5 +122,19 @@ pub fn modified_encode_test() {
     problem_11.Many(2, "a"),
     problem_11.One("d"),
     problem_11.Many(4, "e"),
+  ])
+}
+
+pub fn decode_test() {
+  problem_12.decode([
+    problem_12.Many(4, "a"),
+    problem_12.One("b"),
+    problem_12.Many(2, "c"),
+    problem_12.Many(2, "a"),
+    problem_12.One("d"),
+    problem_12.Many(4, "e"),
+  ])
+  |> should.equal([
+    "a", "a", "a", "a", "b", "c", "c", "a", "a", "d", "e", "e", "e", "e",
   ])
 }
