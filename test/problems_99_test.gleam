@@ -5,6 +5,7 @@ import problems/problem_10
 import problems/problem_11
 import problems/problem_12
 import problems/problem_13
+import problems/problem_14
 import problems/problem_2
 import problems/problem_3
 import problems/problem_4
@@ -152,4 +153,9 @@ pub fn direct_encode_test() {
     problem_13.One("d"),
     problem_13.Many(4, "e"),
   ])
+}
+
+pub fn duplicate_test() {
+  problem_14.duplicate(["a", "b", "c", "c", "d"])
+  |> should.equal(["a", "a", "b", "b", "c", "c", "c", "c", "d", "d"])
 }
