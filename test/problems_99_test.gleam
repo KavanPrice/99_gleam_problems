@@ -6,6 +6,7 @@ import problems/problem_11
 import problems/problem_12
 import problems/problem_13
 import problems/problem_14
+import problems/problem_15
 import problems/problem_2
 import problems/problem_3
 import problems/problem_4
@@ -158,4 +159,9 @@ pub fn direct_encode_test() {
 pub fn duplicate_test() {
   problem_14.duplicate(["a", "b", "c", "c", "d"])
   |> should.equal(["a", "a", "b", "b", "c", "c", "c", "c", "d", "d"])
+}
+
+pub fn replicate_test() {
+  problem_15.replicate(["a", "b", "c"], 3)
+  |> should.equal(["a", "a", "a", "b", "b", "b", "c", "c", "c"])
 }
