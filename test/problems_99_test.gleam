@@ -8,6 +8,7 @@ import problems/problem_13
 import problems/problem_14
 import problems/problem_15
 import problems/problem_16
+import problems/problem_17
 import problems/problem_2
 import problems/problem_3
 import problems/problem_4
@@ -170,4 +171,11 @@ pub fn replicate_test() {
 pub fn drop_test() {
   problem_16.drop(["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"], 3)
   |> should.equal(["a", "b", "d", "e", "g", "h", "j"])
+}
+
+pub fn split_test() {
+  problem_17.split(["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"], 3)
+  |> should.equal(#(["a", "b", "c"], ["d", "e", "f", "g", "h", "i", "j"]))
+  problem_17.split(["a", "b", "c", "d"], 5)
+  |> should.equal(#(["a", "b", "c", "d"], []))
 }
