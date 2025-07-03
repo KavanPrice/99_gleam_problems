@@ -9,6 +9,7 @@ import problems/problem_14
 import problems/problem_15
 import problems/problem_16
 import problems/problem_17
+import problems/problem_18
 import problems/problem_2
 import problems/problem_3
 import problems/problem_4
@@ -178,4 +179,9 @@ pub fn split_test() {
   |> should.equal(#(["a", "b", "c"], ["d", "e", "f", "g", "h", "i", "j"]))
   problem_17.split(["a", "b", "c", "d"], 5)
   |> should.equal(#(["a", "b", "c", "d"], []))
+}
+
+pub fn slice_test() {
+  problem_18.slice(["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"], 2, 6)
+  |> should.equal(["c", "d", "e", "f", "g"])
 }
