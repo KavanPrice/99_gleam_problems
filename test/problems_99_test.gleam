@@ -12,6 +12,7 @@ import problems/problem_17
 import problems/problem_18
 import problems/problem_19
 import problems/problem_2
+import problems/problem_20
 import problems/problem_3
 import problems/problem_4
 import problems/problem_5
@@ -190,4 +191,9 @@ pub fn slice_test() {
 pub fn rotate_test() {
   problem_19.rotate(["a", "b", "c", "d", "e", "f", "g", "h"], 3)
   |> should.equal(["d", "e", "f", "g", "h", "a", "b", "c"])
+}
+
+pub fn remove_at_test() {
+  problem_20.remove_at(1, ["a", "b", "c", "d"])
+  |> should.equal(["a", "c", "d"])
 }
