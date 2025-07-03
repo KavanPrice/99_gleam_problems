@@ -14,6 +14,7 @@ import problems/problem_19
 import problems/problem_2
 import problems/problem_20
 import problems/problem_21
+import problems/problem_22
 import problems/problem_3
 import problems/problem_4
 import problems/problem_5
@@ -202,4 +203,9 @@ pub fn remove_at_test() {
 pub fn insert_at_test() {
   problem_21.insert_at("alfa", 1, ["a", "b", "c", "d"])
   |> should.equal(["a", "alfa", "b", "c", "d"])
+}
+
+pub fn range_test() {
+  problem_22.range(4, 9)
+  |> should.equal([4, 5, 6, 7, 8, 9])
 }
