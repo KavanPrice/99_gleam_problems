@@ -1,3 +1,4 @@
+import gleam/set
 import gleeunit
 import gleeunit/should
 import problems/problem_1
@@ -15,6 +16,7 @@ import problems/problem_2
 import problems/problem_20
 import problems/problem_21
 import problems/problem_22
+import problems/problem_23
 import problems/problem_3
 import problems/problem_4
 import problems/problem_5
@@ -208,4 +210,10 @@ pub fn insert_at_test() {
 pub fn range_test() {
   problem_22.range(4, 9)
   |> should.equal([4, 5, 6, 7, 8, 9])
+}
+
+pub fn rand_select_test() {
+  let input = ["a", "b", "c", "d", "e", "f", "g", "h"]
+  let output = problem_23.rand_select(input, 3)
+  should.be_true(set.is_subset(set.from_list(output), set.from_list(input)))
 }
